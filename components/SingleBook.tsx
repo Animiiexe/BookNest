@@ -18,20 +18,21 @@ interface SingleBookProps {
 function SingleBook({ book, dispatch }: SingleBookProps) {
   return (
     <div>
-      <Card className="w-80">
+      <Card className="w-90">
         <CardHeader>
-          <CardTitle className="text-xl">{book.author}</CardTitle>
-          <CardDescription>Priority: {book.likes}</CardDescription>
+          <CardTitle className="text-4xl">{book.title}</CardTitle>
+          <CardDescription className="text-l"> ❤️ {book.likes}</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>{book.title}</p>
+          <p className="text-xl">{book.author}</p>
         </CardContent>
         <CardFooter className="flex gap-2">
-          <Button
+          <Button 
             variant="outline"
             onClick={() => dispatch({ type: "like", payload: { id: book.id } })}
           >
             <ThumbsUpIcon />
+            Like
           </Button>
           <Button
             variant="outline"
@@ -40,6 +41,7 @@ function SingleBook({ book, dispatch }: SingleBookProps) {
             }
           >
             <ThumbsDownIcon />
+            Dislike
           </Button>
           <Button
             variant="destructive"
@@ -48,6 +50,7 @@ function SingleBook({ book, dispatch }: SingleBookProps) {
             }
           >
             <BadgeMinus />
+            Delete
           </Button>
         </CardFooter>
       </Card>

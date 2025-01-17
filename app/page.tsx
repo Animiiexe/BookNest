@@ -10,16 +10,17 @@ import ListBooks from "@/components/ListBooks";
 const initBooks = [
   {
     id: "1",
-    title: "React",
-    author: "Evan",
-    likes: 0,
+    title: "Cosmos",
+    author: "Carl Sagan",
+    likes: 3,
   },
   {
-    id: "34",
-    title: "Angular",
-    author: "Google",
-    likes: 0,
+    id: "32",
+    title: "The Shining",
+    author: "Stephen King",
+    likes: 2,
   },
+ 
 ];
 
 function Page() {
@@ -29,7 +30,7 @@ function Page() {
     <div>
       <Header />
       <HeroHighlight>
-      <h1 className="text-6xl sm:text-8xl md:text-9xl">BookNest</h1>
+      <h1 className="text-6xl sm:text-8xl md:text-9xl animate-pulse">BookNest</h1>
 
       </HeroHighlight>
       <AddBook dispatch={dispatch} />

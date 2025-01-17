@@ -31,24 +31,41 @@ function AddBook({ dispatch }: AddBookProps) {
 
   return (
     <form
-      className="max-w-96 mx-auto my-10 flex flex-col gap-2"
-      onSubmit={handleSubmit}
+  className="max-w-lg mx-auto my-12 p-6 flex flex-col gap-4"
+  onSubmit={handleSubmit}
+>
+<Input
+  placeholder="Book title"
+  ref={bookTitle}
+  required
+  className="p-5 text-xl border-0 border-b border-gray-400 rounded-none"
+/>
+
+
+  <Input
+    placeholder="Author"
+    ref={bookAuthor}
+    required
+    className="p-5 text-xl border-0 border-b border-gray-400 rounded-none"
+  />
+  <div className="flex gap-4 mt-4">
+    <Button
+      variant="outline"
+      type="button"
+      className="flex items-center gap-2 px-6 py-5 text-lg hover:border-blue-500 hover:text-blue-500"
+      onClick={() => dispatch({ type: "sort" })}
     >
-      <Input placeholder="Book title" ref={bookTitle} required />
-      <Input placeholder="Author" ref={bookAuthor} required />
-      <div className="flex gap-2">
-        <Button
-          variant="outline"
-          type="button"
-          onClick={() => dispatch({ type: "sort" })}
-        >
-          <ArrowDown01Icon /> Sort
-        </Button>
-        <Button type="submit">
-          <CrossIcon /> Add
-        </Button>
-      </div>
-    </form>
+      <ArrowDown01Icon className="w-6 h-6" /> Sort
+    </Button>
+    <Button
+      type="submit"
+      className="flex items-center gap-2 px-6 py-5 text-lg bg-blue-500 text-white rounded-md hover:bg-blue-600"
+    >
+      <CrossIcon className="w-6 h-6" /> Add
+    </Button>
+  </div>
+</form>
+
   );
 }
 
